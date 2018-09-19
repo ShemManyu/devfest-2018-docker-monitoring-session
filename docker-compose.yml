@@ -1,0 +1,24 @@
+version: '3'
+
+networks:
+  monitor:
+    driver: bridge
+
+services:
+  service1:
+    build: ./service1
+    ports:
+      - 8000:8000
+      - 9000:9000
+    networks:
+      - monitor
+  
+  prometheus:
+    build: ./prometheus
+    expose:
+      - 9090
+    
+    networks:
+      - monitor
+    ports:
+      - 9090:9090
