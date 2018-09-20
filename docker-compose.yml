@@ -5,8 +5,8 @@ networks:
     driver: bridge
 
 services:
-  service1:
-    build: ./service1
+  flask-service:
+    build: ./flask-service
     ports:
       - 8000:8000
       - 9000:9000
@@ -15,10 +15,15 @@ services:
   
   prometheus:
     build: ./prometheus
-    expose:
-      - 9090
-    
+  
     networks:
       - monitor
     ports:
       - 9090:9090
+  
+  grafana:
+    image: grafana/grafana:5.2.1
+    networks: 
+      - monitor
+    ports:
+      - 3000:3000

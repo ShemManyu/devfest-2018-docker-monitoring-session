@@ -28,7 +28,7 @@ scrape_configs:
 
     static_configs:
       - targets: ['0.0.0.0:9090']
-  - job_name: "service1"
+  - job_name: "flask-service"
     scrape_interval: "15s"
     static_configs:
-      - targets: ['service1:9000']
+      - targets: ['flask-service:9000']
