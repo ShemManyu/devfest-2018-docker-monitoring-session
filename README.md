@@ -32,7 +32,7 @@ $ docker-compose up
 ```
 This is an overview of the architecture
 
-![Overview](overview.png)
+![Overview](screenshots/overview.png)
 
 The application needs to expose an endpoint which gives its metrics, prometheus scrapes theses metrics after a specified interval and stores them in a time series
 database. Grafana then gets these metrics from prometheus and visualizes them.
@@ -45,13 +45,35 @@ Prometheus supports complex queries but were keeping it simple here. Load ```loc
 and type the query ```sum(flask_request_count)``` in prometheus and click execute this should give you the total requests and should increase after you load
 ```localhost:8000```
 
+![Promethues Screenshot](screenshots/prometheus.png)
+
 We can now graph this metric with grafana which should be running in ```localhost:3000```.
 Use the default credentials admin/admin to login and you can skip the password change.
 
+![Grafana Screenshot](screenshots/grafana.png)
+
 We first need to tell grafana where to get the metrics. Click on ```datasources``` and add prometheus
 
-![Screenshot](prometheus.png)
+![Data source Screenshot](screenshots/datasource.png)
 
-Add a graph to visualize this metric
+![Data source Screenshot](screenshots/promdatasource.png)
 
-![Screenshot](graph.png)
+Save and test.
+
+Now we can add a graph to visualize this metric
+
+Dashboards home > New dashboard
+
+![Grafana Screenshot](screenshots/graph.png)
+
+Choose graph
+Then click on panel title > Edit
+And you should be here
+
+![Panel Screenshot](screenshots/panel.png)
+
+We can now add our prometheus data source in the drop down and a query to get the data we want to display which was flask_request_count
+
+![Display Screenshot](screenshots/display.png)
+
+We can how monitor how the requests to our service are changing over time.
