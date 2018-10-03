@@ -73,9 +73,9 @@ And you should be here
 ![Panel Screenshot](screenshots/panel.png)
 
 We can now add our prometheus data source in the drop down and a query to get the data we want to display which was flask_request_count
-
+https://www.docker.com/get-started
 ![Display Screenshot](screenshots/display.png)
 
 We can how monitor how the requests to our service are changing over time.
 
-For more checkout @sixeyed's awesome [pluralsight course](https://app.pluralsight.com/library/courses/monitoring-containerized-app-health-docker/table-of-contents)
+For more checkout @sixeyed 's awesome [pluralsight course](https://app.pluralsight.com/library/courses/monitoring-containerized-app-health-docker/table-of-contents)
